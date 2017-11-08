@@ -60,6 +60,9 @@ app.post('/api/study/vote/submit/', cors(corsOptions), study.submitVote );
 app.get('/api/study/admin/:token', admin.loadStudy );
 app.get('/api/study/admin/download/:token', admin.download );
 app.get('/api/study/admin/assign/:token', admin.assignWinner);
+app.get('/newfeat', function(req, res) {
+  res.send('New feature');
+})
 
 app.post('/api/study/admin/open/', admin.openStudy );
 app.post('/api/study/admin/close/', admin.closeStudy );
