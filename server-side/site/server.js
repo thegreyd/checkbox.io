@@ -50,6 +50,9 @@ app.post('/api/design/survey',
 app.get('/api/study/load/:id', study.loadStudy );
 app.get('/api/study/vote/status', study.voteStatus );
 app.get('/api/study/status/:id', study.status );
+app.get('/api/newfeat', function(req, res) {
+  res.send('New feature');
+})
 
 app.get('/api/study/listing', study.listing );
 
@@ -60,9 +63,7 @@ app.post('/api/study/vote/submit/', cors(corsOptions), study.submitVote );
 app.get('/api/study/admin/:token', admin.loadStudy );
 app.get('/api/study/admin/download/:token', admin.download );
 app.get('/api/study/admin/assign/:token', admin.assignWinner);
-app.get('/newfeat', function(req, res) {
-  res.send('New feature');
-})
+
 
 app.post('/api/study/admin/open/', admin.openStudy );
 app.post('/api/study/admin/close/', admin.closeStudy );
