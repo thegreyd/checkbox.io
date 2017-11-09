@@ -55,7 +55,7 @@ app.get('/api/study/status/:id', study.status );
 
 
 
-#app.get('/api/study/listing', study.listing );
+//app.get('/api/study/listing', study.listing );
 
 app.post('/api/study/create', create.createStudy );
 app.post('/api/study/vote/submit/', cors(corsOptions), study.submitVote );
