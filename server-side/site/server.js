@@ -50,7 +50,7 @@ app.post('/api/design/survey',
 app.get('/api/study/load/:id', study.loadStudy );
 app.get('/api/study/vote/status', study.voteStatus );
 app.get('/api/study/status/:id', study.status );
-app.get('/api/newfeat', function(req, res) {
+app.get('/', function(req, res) {
   res.send('New feature');
 })
 
