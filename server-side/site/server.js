@@ -25,6 +25,8 @@ var corsOptions = {
 
 app.options('/api/study/vote/submit/', cors(corsOptions));
 
+
+
 app.post('/api/design/survey', 
 	function(req,res)
 	{
@@ -50,6 +52,9 @@ app.post('/api/design/survey',
 app.get('/api/study/load/:id', study.loadStudy );
 app.get('/api/study/vote/status', study.voteStatus );
 app.get('/api/study/status/:id', study.status );
+app.get('/hey', function(req, res) {
+  res.send('hello world')
+})
 
 
 app.get('/api/study/listing', study.listing );
