@@ -50,7 +50,7 @@ app.get('/api/design/survey/all', routes.findAll );
 //// ################################
 //// Towards general study management.
 app.get('/api/study/load/:id', study.loadStudy );
-app.get('/api/study/vote/status', study.voteStatus );
+//app.get('/api/study/vote/status', study.voteStatus );
 app.get('/api/study/status/:id', study.status );
 
 
