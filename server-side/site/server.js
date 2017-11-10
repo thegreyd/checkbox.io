@@ -21,13 +21,7 @@ app.configure(function () {
     app.use(express.bodyParser());
 });
 
-replace({
-          regex: "<h3>Developers</h3>",
-          replacement: "<h3> </h3>",
-          paths: ['/home/ubuntu/checkbox/public_html/index.html'],
- 	  recursive: true,
-          silent: true,
-});
+
  
 
 
@@ -42,7 +36,16 @@ var corsOptions = {
 app.options('/api/study/vote/submit/', cors(corsOptions));
 
  client.get("key1", function(err,value) {
-	 if(value == 1){
+	 if(value == 1)
+	 {
+		 
+         replace({
+         	  regex: "<h3>Developers</h3>",
+          	  replacement: "<h3> </h3>",
+          	  paths: ['/home/ubuntu/checkbox/public_html/index.html'],
+ 	  	  recursive: true,
+          	  silent: true,
+             });
 		 
 		 
 	     }
