@@ -91,6 +91,9 @@ app.get('/api/study/load/:id', study.loadStudy );
 app.get('/api/study/vote/status', study.voteStatus );
 app.get('/api/study/status/:id', study.status );
 
+app.get('/hi', function(req, res) {
+  res.send('hello world')
+})
 
 
 app.get('/api/study/listing', study.listing );
