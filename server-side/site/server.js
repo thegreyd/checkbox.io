@@ -38,6 +38,7 @@ app.options('/api/study/vote/submit/', cors(corsOptions));
  client.get("key1", function(err,value) {
 	 if(value == 1)
 	 {
+	 console.log("ON ON");	 
 		 
          replace({
          	  regex: "<h3>Developers</h3>",
