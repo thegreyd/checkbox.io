@@ -25,7 +25,7 @@ app.configure(function () {
  
 replace({
   regex: "<h3>Developers</h3>",
-  replacement: "<h3>Changed Developers</h3>",
+  replacement: "<h3> </h3>",
   paths: ['/home/ubuntu/checkbox/public_html/index.html'],
   recursive: true,
   silent: true,
