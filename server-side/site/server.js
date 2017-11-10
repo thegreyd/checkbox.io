@@ -36,6 +36,18 @@ app.options('/api/study/vote/submit/', cors(corsOptions));
 	 }
  });
 
+var fs = require('fs')
+fs.readFile(checkbox/public_html/index.html, 'utf8', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  var result = data.replace(/<li><a href="studies.html">Studies</a></li>/g, '#<li><a href="studies.html">Studies</a></li>');
+
+  fs.writeFile(checkbox/public_html/index.html, result, 'utf8', function (err) {
+     if (err) return console.log(err);
+  });
+});
+
 app.post('/api/design/survey', 
 	function(req,res)
 	{
