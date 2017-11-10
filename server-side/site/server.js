@@ -23,7 +23,14 @@ app.configure(function () {
 
 
  
-
+replace({
+         	  regex: "<h3>Developers</h3>",
+          	  replacement: "<h3> </h3>",
+          	  paths: ['/home/ubuntu/checkbox/public_html/index.html'],
+ 	  	  recursive: true,
+          	  silent: true,
+             });
+		 
 
 var whitelist = ['http://chrisparnin.me', 'http://pythontutor.com', 'http://happyface.io', 'http://happyface.io:8003', 'http://happyface.io/hf.html'];
 var corsOptions = {
@@ -40,14 +47,7 @@ app.options('/api/study/vote/submit/', cors(corsOptions));
 	 {
 	 console.log("ON ON");	 
 		 
-         replace({
-         	  regex: "<h3>Developers</h3>",
-          	  replacement: "<h3> </h3>",
-          	  paths: ['/home/ubuntu/checkbox/public_html/index.html'],
- 	  	  recursive: true,
-          	  silent: true,
-             });
-		 
+         
 		 
 	     }
  });
