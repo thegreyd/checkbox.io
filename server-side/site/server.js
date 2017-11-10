@@ -14,7 +14,7 @@ var replace = require("replace");
 var app = express();
 
 var client = redis.createClient(6379, '127.0.0.1', {})
-client.set("key1",1);
+client.set("key1",0);
 
 app.configure(function () {
     app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
@@ -23,13 +23,7 @@ app.configure(function () {
 
 
  
-replace({
-         	  regex: "<h3>Developers</h3>",
-          	  replacement: "<h3> </h3>",
-          	  paths: ['/home/ubuntu/checkbox/public_html/index.html'],
- 	  	  recursive: true,
-          	  silent: true,
-             });
+
 		 
 
 var whitelist = ['http://chrisparnin.me', 'http://pythontutor.com', 'http://happyface.io', 'http://happyface.io:8003', 'http://happyface.io/hf.html'];
@@ -46,6 +40,13 @@ app.options('/api/study/vote/submit/', cors(corsOptions));
 	 if(value == 1)
 	 {
 	 console.log("ON ON");	 
+	replace({
+         	  regex: "<h3>Developers</h3>",
+          	  replacement: "<h3> </h3>",
+          	  paths: ['/home/ubuntu/checkbox/public_html/index.html'],
+ 	  	  recursive: true,
+          	  silent: true,
+             });
 		 
          
 		 
