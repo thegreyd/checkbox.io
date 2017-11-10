@@ -14,7 +14,7 @@ var replace = require("replace");
 var app = express();
 
 var client = redis.createClient(6379, '127.0.0.1', {})
-client.set("key1",0);
+client.set("key1",1);
 
 app.configure(function () {
     app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
