@@ -7,8 +7,13 @@ var express = require('express'),
 	create = require('./routes/create.js'),
 	study = require('./routes/study.js'),
 	admin = require('./routes/admin.js');
-
+var redis = require('redis')
+var multer  = require('multer')
+var fs      = require('fs')
 var app = express();
+
+var client = redis.createClient(6379, '127.0.0.1', {})
+client.set("key1",1);
 
 app.configure(function () {
     app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
@@ -25,7 +30,11 @@ var corsOptions = {
 
 app.options('/api/study/vote/submit/', cors(corsOptions));
 
-
+ client.get("key1", function(err,value) {
+	 if(value == 1){
+		 console.log("feature on!!!!!!!!!!!!!!!");
+	 }
+ });
 
 app.post('/api/design/survey', 
 	function(req,res)
