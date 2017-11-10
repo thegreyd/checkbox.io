@@ -37,7 +37,7 @@ app.post('/api/design/survey',
 	}
 );
 
-app.get('/api/design/survey/all', routes.findAll );
+//app.get('/api/design/survey/all', routes.findAll );
 //app.get('/api/design/survey/:id', routes.findById );
 //app.get('/api/design/survey/admin/:token', routes.findByToken );
 
@@ -50,14 +50,14 @@ app.get('/api/design/survey/all', routes.findAll );
 //// ################################
 //// Towards general study management.
 app.get('/api/study/load/:id', study.loadStudy );
-//app.get('/api/study/vote/status', study.voteStatus );
+app.get('/api/study/vote/status', study.voteStatus );
 app.get('/api/study/status/:id', study.status );
 
 
 
 app.get('/api/study/listing', study.listing );
 
-app.post('/api/study/create', create.createStudy );
+//app.post('/api/study/create', create.createStudy );
 app.post('/api/study/vote/submit/', cors(corsOptions), study.submitVote );
 
 //// ADMIN ROUTES
