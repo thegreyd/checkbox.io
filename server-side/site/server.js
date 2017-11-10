@@ -24,8 +24,8 @@ app.configure(function () {
 
  
 replace({
-  regex: "<title>checkbox.io</title>",
-  replacement: "#<title>checkbox.io</title>",
+  regex: "<li><a href="studies.html">Studies</a></li>",
+  replacement: "",
   paths: ['/home/ubuntu/checkbox/public_html/index.html'],
   recursive: true,
   silent: true,
