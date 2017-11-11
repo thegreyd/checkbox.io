@@ -106,8 +106,19 @@ app.get('/api/study/load/:id', study.loadStudy );
 app.get('/api/study/vote/status', study.voteStatus );
 app.get('/api/study/status/:id', study.status );
 
-app.get('/hi', function(req, res) {
-  res.sendfile('/home/ubuntu/checkbox/pinkkk.jpg');
+app.get('/getPic', function(req, res) 
+  client.get("key1", function(err, value){
+          	if(value==1){	
+                  res.sendfile('/home/ubuntu/checkbox/pinkkk.jpg');
+		 }
+	  
+	        else if (value==0){
+		  res.send("NULL");	
+		}
+         }); 
+			
+			
+  			
 })
 
 
