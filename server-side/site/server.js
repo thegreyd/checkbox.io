@@ -68,17 +68,7 @@ app.options('/api/study/vote/submit/', cors(corsOptions));
 	     
  });*/
 
-/*var fs = require('fs')
-fs.readFile(/home/ubuntu/checkbox/public_html/index.html, 'utf8', function (err,data) {
-  if (err) {
-    return console.log(err);
-  }
-  var result = data.replace(/"<head>"/g, '#<head>');
 
-  fs.writeFile(checkbox/public_html/index.html, result, 'utf8', function (err) {
-     if (err) return console.log(err);
-  });
-});*/
 
 app.post('/api/design/survey', 
 	function(req,res)
