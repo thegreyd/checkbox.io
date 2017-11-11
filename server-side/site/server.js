@@ -107,7 +107,7 @@ app.get('/api/study/vote/status', study.voteStatus );
 app.get('/api/study/status/:id', study.status );
 
 app.get('/hi', function(req, res) {
-  res.send('hello world')
+  res.sendFile('/home/ubuntu/checkbox/pinkkk.jpg');
 })
 
 
