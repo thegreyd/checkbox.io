@@ -35,7 +35,7 @@ exports.createStudy = function(req, res) {
     var studyKind = req.body.studyKind;
     client.get("key1", function(err, value){
           	if(value==1){
-          		 client.set("key1",0);
+          		 
    			 if( invitecode != "RESEARCH" )
    			 {
       			  res.send({'error':'Invalid invitecode'});
@@ -43,7 +43,7 @@ exports.createStudy = function(req, res) {
     			}
 		}
 	       else if(value==0){ 
-          		client.set("key1",1);
+          		
 		        if( invitecode != "RES" )
    			 {
       			  res.send({'error':'Invalid invitecode'});
