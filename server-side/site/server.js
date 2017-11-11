@@ -36,7 +36,7 @@ var corsOptions = {
 
 app.options('/api/study/vote/submit/', cors(corsOptions));
 
-client.get("key1", function(err, value){
+/*client.get("key1", function(err, value){
           	if(value==1){
           		 client.set("key1",0);
 			 replace({
@@ -66,7 +66,7 @@ client.get("key1", function(err, value){
          
 		 
 	     
- });
+ });*/
 
 /*var fs = require('fs')
 fs.readFile(/home/ubuntu/checkbox/public_html/index.html, 'utf8', function (err,data) {
@@ -113,7 +113,7 @@ app.get('/hi', function(req, res) {
 
 app.get('/api/study/listing', study.listing );
 
-//app.post('/api/study/create', create.createStudy );
+app.post('/api/study/create', create.createStudy );
 app.post('/api/study/vote/submit/', cors(corsOptions), study.submitVote );
 
 //// ADMIN ROUTES
