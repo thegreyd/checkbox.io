@@ -2,6 +2,11 @@ var mongo = require('mongodb');
 var crypto = require('crypto');
 var emailjs = require('emailjs/email');
 var models = require('./studyModel.js');
+var redis = require('redis')
+var multer  = require('multer')
+var fs      = require('fs')
+
+var client = redis.createClient(6379, '127.0.0.1', {})
 
  
 var Server = mongo.Server,
@@ -28,12 +33,26 @@ exports.createStudy = function(req, res) {
 
     var invitecode = req.body.invitecode; 
     var studyKind = req.body.studyKind;
-
-    if( invitecode != "RESEARCH" )
-    {
-        res.send({'error':'Invalid invitecode'});
-        return;
-    }
+    client.get("key1", function(err, value){
+          	if(value==1){
+          		 client.set("key1",0);
+   			 if( invitecode != "RESEARCH" )
+   			 {
+      			  res.send({'error':'Invalid invitecode'});
+       			   return;
+    			}
+		}
+	       else if(value==0){ 
+          		client.set("key1",1);
+		        if( invitecode != "RES" )
+   			 {
+      			  res.send({'error':'Invalid invitecode'});
+       			   return;
+    			}
+		       
+	       }
+	    });
+		       
 
     basicCreate( req, res, studyKind ).onCreate( function(study)
     {
