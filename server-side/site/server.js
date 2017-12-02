@@ -12,6 +12,7 @@ var multer  = require('multer')
 var fs      = require('fs')
 var health = require('express-ping')
 var replace = require("replace");
+var npmCheck = require("npm-check")
 var app = express();
 
 var client = redis.createClient(6379, '127.0.0.1', {})
@@ -22,9 +23,6 @@ app.configure(function () {
     app.use(express.bodyParser());
     app.use(health.ping());
 });
-
-
- 
 
 		 
 
@@ -110,6 +108,12 @@ app.get('/getPic', function(req, res) {
          }); 
 					
   			
+})
+
+app.get('/pingdependency', function(req, res) {
+  options = {}
+  npmCheck(options)
+  .then(currentState => res.send(currentState.get('packages')));
 })
 
 
