@@ -20,7 +20,7 @@
     "underscore": "^1.8.3",
     "validator": "^6.2.1",
     "esprima": "^3.0.0",
-    "npm-check": "5.5.2"
+    "npm-check": "5.5.2",
     "express-ping": "1.4.0"
   }
 }
