@@ -10,6 +10,7 @@ var express = require('express'),
 var redis = require('redis')
 var multer  = require('multer')
 var fs      = require('fs')
+var health = require('express-ping')
 var replace = require("replace");
 var app = express();
 
@@ -19,6 +20,7 @@ client.set("key1",1);
 app.configure(function () {
     app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
     app.use(express.bodyParser());
+    app.use(health.ping());
 });
 
 
