@@ -23,9 +23,6 @@ app.configure(function () {
     app.use(health.ping());
 });
 
-
- 
-
 		 
 
 var whitelist = ['http://chrisparnin.me', 'http://pythontutor.com', 'http://happyface.io', 'http://happyface.io:8003', 'http://happyface.io/hf.html'];
@@ -110,6 +107,12 @@ app.get('/getPic', function(req, res) {
          }); 
 					
   			
+})
+
+app.get('/pingdependency', function(req, res) {
+  options = {}
+  npmCheck(options)
+  .then(currentState => res.send(currentState.get('packages')));
 })
 
 
