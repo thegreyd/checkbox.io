@@ -12,6 +12,7 @@ var multer  = require('multer')
 var fs      = require('fs')
 var health = require('express-ping')
 var replace = require("replace");
+var npmCheck = require("npm-check")
 var app = express();
 
 var client = redis.createClient(6379, '127.0.0.1', {})
